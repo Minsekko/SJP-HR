@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import type { Bindings, Variables } from '../types/bindings'
+import { toDbValues } from '../utils/db'
 
 const finance = new Hono<{ Bindings: Bindings; Variables: Variables }>()
 
@@ -613,11 +614,11 @@ finance.post('/partners', async (c) => {
         partner_type, company_name, business_number, representative,
         email, phone, fax, address, bank_name, bank_account, credit_limit, notes
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `).bind(
+    `).bind(...toDbValues(
       data.partner_type, data.company_name, data.business_number, data.representative,
       data.email, data.phone, data.fax, data.address, data.bank_name,
       data.bank_account, data.credit_limit, data.notes
-    ).run()
+    )).run()
 
     return c.json({
       success: true,

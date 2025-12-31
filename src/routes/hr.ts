@@ -133,10 +133,10 @@ hr.post('/employees', async (c) => {
         bank_name, bank_account, salary
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `).bind(
-      data.employee_number, data.name, data.name_en, data.department_id, data.position_id,
-      data.email, data.phone, data.mobile, data.hire_date, data.employment_type || 'full_time',
-      data.status || 'active', data.birth_date, data.address, data.emergency_contact,
-      data.emergency_phone, data.bank_name, data.bank_account, data.salary
+      data.employee_number, data.name, data.name_en || null, data.department_id || null, data.position_id || null,
+      data.email || null, data.phone || null, data.mobile || null, data.hire_date, data.employment_type || 'full_time',
+      data.status || 'active', data.birth_date || null, data.address || null, data.emergency_contact || null,
+      data.emergency_phone || null, data.bank_name || null, data.bank_account || null, data.salary || null
     ).run()
 
     return c.json({
