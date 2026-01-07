@@ -12,7 +12,7 @@
 
 - **개발 서버**: https://3000-iwva1x7bntcgmjsllhk5m-b237eb32.sandbox.novita.ai
 - **API 헬스체크**: https://3000-iwva1x7bntcgmjsllhk5m-b237eb32.sandbox.novita.ai/api/health
-- **GitHub**: (아직 연동 안됨)
+- **GitHub**: https://github.com/Minsekko/SJP-HR
 
 ## ✅ 현재 완료된 기능
 
@@ -173,7 +173,7 @@ pm2 logs webapp --nostream
 - ❌ 게시판/공지사항
 
 ### 4. 배포
-- ❌ GitHub 연동
+- ✅ GitHub 연동 완료
 - ❌ Cloudflare Pages 프로덕션 배포
 - ❌ 프로덕션 D1 데이터베이스 설정
 - ❌ 환경 변수 설정
